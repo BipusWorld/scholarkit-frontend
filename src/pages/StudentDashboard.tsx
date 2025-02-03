@@ -98,7 +98,12 @@ const StudentDashboard = () => {
 
         <h2 className="text-xl font-semibold mb-6">Quick Access</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          <ModuleCard title="Time Table" icon={Clock} color="bg-primary" />
+          <ModuleCard 
+            title="Time Table" 
+            icon={Clock} 
+            color="bg-primary"
+            onClick={() => navigate("/student/timetable")}
+          />
           <ModuleCard 
             title="Syllabus" 
             icon={BookOpen} 
@@ -109,11 +114,13 @@ const StudentDashboard = () => {
             title="Leave Application"
             icon={FileText}
             color="bg-green-500"
+            onClick={() => navigate("/student/leave-application")}
           />
           <ModuleCard 
             title="Previous Papers" 
             icon={FileText} 
-            color="bg-blue-500" 
+            color="bg-blue-500"
+            onClick={() => navigate("/student/past-papers")}
           />
         </div>
 
