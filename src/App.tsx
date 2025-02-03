@@ -8,6 +8,7 @@ import { ModeToggle } from "@/components/mode-toggle";
 import Login from "./pages/Login";
 import StudentDashboard from "./pages/StudentDashboard";
 import TeacherDashboard from "./pages/TeacherDashboard";
+import StudentSyllabus from "./pages/StudentSyllabus";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -27,6 +28,7 @@ const App = () => (
             <Route path="/login" element={<Login />} />
             <Route path="/student-dashboard" element={<StudentDashboard />} />
             <Route path="/teacher-dashboard" element={<TeacherDashboard />} />
+            <Route path="/student/syllabus" element={<StudentSyllabus />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

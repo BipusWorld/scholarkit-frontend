@@ -37,12 +37,17 @@ const ModuleCard = ({
   title,
   icon: Icon,
   color,
+  onClick,
 }: {
   title: string;
   icon: any;
   color: string;
+  onClick?: () => void;
 }) => (
-  <Card className="p-4 text-center hover:shadow-lg transition-shadow cursor-pointer">
+  <Card 
+    className="p-4 text-center hover:shadow-lg transition-shadow cursor-pointer"
+    onClick={onClick}
+  >
     <div className={`p-3 rounded-full ${color} w-12 h-12 mx-auto mb-3 flex items-center justify-center`}>
       <Icon className="w-6 h-6 text-white" />
     </div>
@@ -94,13 +99,22 @@ const StudentDashboard = () => {
         <h2 className="text-xl font-semibold mb-6">Quick Access</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           <ModuleCard title="Time Table" icon={Clock} color="bg-primary" />
-          <ModuleCard title="Syllabus" icon={BookOpen} color="bg-accent" />
+          <ModuleCard 
+            title="Syllabus" 
+            icon={BookOpen} 
+            color="bg-accent" 
+            onClick={() => navigate("/student/syllabus")}
+          />
           <ModuleCard
             title="Leave Application"
             icon={FileText}
             color="bg-green-500"
           />
-          <ModuleCard title="Previous Papers" icon={FileText} color="bg-blue-500" />
+          <ModuleCard 
+            title="Previous Papers" 
+            icon={FileText} 
+            color="bg-blue-500" 
+          />
         </div>
 
         <h2 className="text-xl font-semibold mt-8 mb-6">Recent Announcements</h2>
